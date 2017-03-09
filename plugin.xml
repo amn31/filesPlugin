@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- id = correspond au nom du package des scripts Java -->
+<!-- version = La version -->
+<plugin 
+	id="com.morillon.cordova.FilesPlugin" 
+    xmlns="http://www.phonegap.com/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    version="1.0.0">
+    
+    <engines>
+        <engine name="cordova" version=">=2.8.0" />
+    </engines>
+	<!-- le nom du plugin -->
+    <name>Files Plugin</name>
+
+	<!-- l'acces au fichier de définition du plugin Javascript -->
+    <js-module src="www/filesPlugin.js" name="FilesPlugin">
+		<!-- filesPlugin correspond au nom de la classe Javascript qui sera proposee dans index.html -->
+        <clobbers target="filesPlugin" />
+    </js-module>
+
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/widget">  
+			<!-- value = correspond à l'id (le nom du package des scripts Java) -->
+            <feature name="FilesPlugin">
+                <param name="android-package" value="com.morillon.cordova.FilesPlugin"/>
+            </feature> 
+        </config-file> 
+        <!-- l'acces au fichier de code source Java (FilesPlugin.java) -->     
+        <source-file src="src/android/FilesPlugin.java" target-dir="src/com/morillon/cordova"/>
+                        
+    </platform>
+    
+</plugin>
