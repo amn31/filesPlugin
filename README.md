@@ -7,29 +7,33 @@ Install with Cordova CLI
 	
 	$ cordova plugin add https://github.com/amn31/filesPlugin.git
 
-API
-
-	fileChooser.open(successCallback, failureCallback);
+Exemple d'utilisation de l'API Javascript
 
 
-	// L'utilisation du module sera ainsi
+
+	// Affichage du message 'Good news'
 	filesPlugin.showMessage('Good news');
 	
 	ou
 	
-	// utilisation de alerte
+	// cas de success 
+	// click sur bouton OK
 	successCallback = function(uri) {
 		alert('Success:'+uri);
 	};
 	
+	// cas d'erreur 
+	// click sur bouton CANCEL
 	failureCallback = function(error) {
 		alert('Error:'+error);
 	};
 		
+	// Affichage du message
     var nothingToReturn = filesPlugin.alert(['Voici le message','Le title','not used'],successCallback, failureCallback);
 
 	ou
 	
+	// Autre appel à partir d'un JSON
 	filesPlugin.jsonMessage({
         		title: 'LE TITRE',
         		message: 'LE MESSAGE'
