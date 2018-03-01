@@ -43,6 +43,7 @@ MyPlugin = {
         cordova.exec(success, failure, "FilesPlugin", "jsonMessage", [args]);
     }
     
+    //
 };
 
 module.exports = MyPlugin;
